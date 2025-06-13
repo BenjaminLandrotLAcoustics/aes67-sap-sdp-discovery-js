@@ -37,6 +37,14 @@ a=ts-refclk:ptp=IEEE1588-2008:00-60-74-FF-FE-FB-D7-AA:1
 a=mediaclk:direct=0
 ```
 
+## Known limitations
+
+### Network interface segregation
+
+The script does not control which network interface is used for joining the multicast groups. So if the computer has multiple connected network interfaces, there is a risk that the multicast group is joined on the wrong interface and SAP packets are not received.
+
+To ensure the correct network interface is used, before executing the script, disconnect or disable all network interfaces except the appropriate one.
+
 #### References
 
 - [Session Annoucnement Protocol](https://en.wikipedia.org/wiki/Session_Announcement_Protocol)
